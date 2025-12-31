@@ -1,0 +1,38 @@
+function showTester() {
+  document.getElementById("tester").classList.remove("hidden");
+}
+
+function clearPaste() {
+  document.getElementById("message").value = "";
+}
+
+function checkScam() {
+  if (!canPaste()) return;
+
+  const msg = document.getElementById("message").value.toLowerCase();
+  let score = 0;
+
+  const keywords = [
+    "investment", "telegram", "crypto", "guaranteed",
+    "250k", "1m", "double your money", "unlicensed",
+    "send money", "fast profit"
+  ];
+
+  keywords.forEach(k => {
+    if (msg.includes(k)) score++;
+  });
+
+  let result = document.getElementById("result");
+
+  if (score >= 3) {
+    result.innerHTML = `
+      ⚠️ HIGH RISK SCAM<br>
+      In Nigeria, free money offers are rare.
+      Always verify licenses before paying money.
+    `;
+    result.style.color = "red";
+  } else {
+    result.innerHTML = "✅ No obvious scam detected, but stay cautious.";
+    result.style.color = "green";
+  }
+}
