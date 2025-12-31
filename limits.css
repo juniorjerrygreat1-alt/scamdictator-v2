@@ -1,0 +1,19 @@
+let pasteCount = 0;
+let screenshotCount = 0;
+
+function canPaste() {
+  pasteCount++;
+  if (pasteCount > 10) {
+    alert("Daily limit reached. Upgrade to Premium.");
+    return false;
+  }
+  return true;
+}
+
+function handleScreenshots() {
+  screenshotCount += event.target.files.length;
+  if (screenshotCount > 3) {
+    alert("Screenshot limit reached. Upgrade to Premium.");
+    event.target.value = "";
+  }
+}
