@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScamDictator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">ScamDictator</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <div class="menu">☰
+      <div class="dropdown">
+        <a href="#premium">Premium</a>
+        <a href="#contact">Contact</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <h1>Detect Online Scams</h1>
+  <p>Protect yourself from fake investments, Telegram scams, and unlicensed money schemes.</p>
+  <button onclick="showTester()">Test ScamDictator</button>
+</section>
+
+<section id="tester" class="tester hidden">
+  <h2>Paste Message or Code</h2>
+
+  <div class="paste-box">
+    <span class="clear" onclick="clearPaste()">✖</span>
+    <textarea id="message" placeholder="Paste message, website text, or scam offer here..."></textarea>
+  </div>
+
+  <button onclick="checkScam()">Test</button>
+
+  <h3>Upload Screenshots (Max 3)</h3>
+  <input type="file" id="screenshots" multiple accept="image/*" onchange="handleScreenshots()">
+
+  <div id="result"></div>
+</section>
+
+<section id="about">
+  <h2>About ScamDictator</h2>
+  <p>
+    ScamDictator is built to help people identify fake investment offers, Telegram scams,
+    fake websites, and fraudulent money promises. In Nigeria and globally, real money
+    opportunities must be licensed and verified.
+  </p>
+</section>
+
+<section id="premium">
+  <h2>Premium Version</h2>
+  <p>
+    Premium access removes limits and enables deeper scam analysis.
+    To upgrade, contact us directly.
+  </p>
+  <strong>📞 0812-465-6761</strong>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Phone: 0812-465-6761</p>
+</section>
+
+<footer>
+  © 2025 ScamDictator. All rights reserved.
+</footer>
+
+<script src="auth.js"></script>
+<script src="limits.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
